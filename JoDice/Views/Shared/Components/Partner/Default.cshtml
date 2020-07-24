@@ -1,0 +1,17 @@
+﻿@model IEnumerable<JoDice.Models.PartnerViewModel>
+
+
+  
+       
+            <ul class="partner_carousel owl-carousel owl-theme">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a href="#"><img alt="@item.Name" src="assets/images/@item.Logo"></a>
+                    </li>
+                }
+
+            </ul>
+      
+
+

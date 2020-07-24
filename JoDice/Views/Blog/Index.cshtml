@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Blog";
+}
+@section Inner{
+    header_inner
+}
+@section Header{
+    <div class="header_btm">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+}
+
+
+<!-- Main
+================================================== -->
+<main>
+    <div class="blog-listing">
+        <div class="container">
+            <div class="row">
+                @*Blog main*@
+                <div class="col-md-9">
+                    <div class="row">
+
+                        <vc:blog></vc:blog>
+
+                        @*<div class="col-md-12">
+                                <div class="post_box">
+                                    <img alt="" src="assets/images/blog1.jpg" class="img-responsive">
+                                    <div class="post_content">
+                                        <h6>
+                                            <a href="blog-single.html">4 Secrets To Be Strategic About Your Job Search</a>
+                                        </h6>
+                                        <p>Queequeg removed himself to just beyond the head of the … </p>
+                                        <a class="btn btn-secondary btn-rounded" href="blog-single.html">Continue reading</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="post_box">
+                                    <img alt="" src="assets/images/blog2.jpg" class="img-responsive">
+                                    <div class="post_content">
+                                        <h6>
+                                            <a href="blog-single.html">Why Long-Term Unemployment Isn’t As Bad As You Think</a>
+                                        </h6>
+                                        <p>Queequeg removed himself to just beyond the head of the … </p>
+                                        <a class="btn btn-secondary btn-rounded" href="blog-single.html">Continue reading</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="post_box">
+                                    <img alt="" src="assets/images/blog3.jpg" class="img-responsive">
+                                    <div class="post_content">
+                                        <h6>
+                                            <a href="blog-single.html">6 Ways Your Job is Losing You Future Earnings</a>
+                                        </h6>
+                                        <p>Queequeg removed himself to just beyond the head of the … </p>
+                                        <a class="btn btn-secondary btn-rounded" href="blog-single.html">Continue reading</a>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+                @*Blog SideBar*@
+                <div class="col-md-3">
+                    <div class="blog_sidebar">
+                        <div class="single-job-sidebar">
+                            @*Blog Search*@
+                            <div class="sjs_box">
+                                <h3>Axtarış</h3>
+                                <form class="form-inline" action="http://veepixel.com/action_page.php">
+                                    <input type="text" class="form-control" placeholder="Search" id="search-blog">
+
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                </form>
+
+                            </div>
+                            @*Blog tags*@
+                            <div class="sjs_box">
+                                <h3>Tags</h3>
+                                <vc:tag></vc:tag>
+                            </div>
+                            @*Blogs Recent Posts*@
+                            <div class="sjs_box">
+                                <h3>Recent Posts</h3>
+                                <ul class="recentpost">
+                                    <li><a href="blog-single.html">4 Secrets To Be Strategic About Your Job Search</a></li>
+                                    <li><a href="blog-single.html">Why Long-Term Unemployment Isn’t As Bad As You Think</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

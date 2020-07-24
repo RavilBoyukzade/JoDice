@@ -1,0 +1,18 @@
+﻿@model IEnumerable<JoDice.Models.BlogViewModel>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-12">
+        <div class="post_box">
+            <img alt="" src="assets/images/@item.Photo" class="img-responsive">
+            <div class="post_content">
+                <h6>
+                    <a href="blog-single.html">@item.Title</a>
+                </h6>
+                <p class="post-text">@item.Text</p>
+                <a class="btn btn-secondary btn-rounded" href="blog-single.html">Continue reading</a>
+            </div>
+        </div>
+    </div>
+}
+    
