@@ -7,16 +7,15 @@ namespace Repository.Models
 {
     public class Job :BaseEntity
     {
+        public int CategoryId { get; set; }
         [Required]
         [MaxLength(100)]
         public string JobName { get; set; }
         [Required]
-        [MaxLength(100)]
-        public string Activity { get; set; }
-        [Required]
         public bool IsPpopular { get; set; }
         [Required]
         public bool IsFeatured { get; set; }
+        public Category Category { get; set; }
 
     }
 }

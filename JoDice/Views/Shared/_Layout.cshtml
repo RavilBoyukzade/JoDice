@@ -4,7 +4,7 @@
 
     <!-- Basic Page Needs
     ================================================== -->
-    <title>@ViewData["Title"] - JoDice</title>
+    <title>@ViewData["Title"] JoDice</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" href="~/assets/images/fav.png" type="image/gif" sizes="64x64">
@@ -152,22 +152,22 @@
                             <div class="ac_nav">
                                 <!--Not logedin-->
                                 <div class="login_pop">
-                                    <button class="btn btn-primary">Login / Sign up <i class="fas fa-caret-down"></i></button>
+                                    <button class="btn btn-primary">Giriş / Qeydiyyat<i class="fas fa-caret-down"></i></button>
                                     <div class="login_pop_box">
                                         <span class="twobtn_cont">
-                                            <a class=" signjs_btn" href="registration.html">
-                                                <span>Job seekers</span> Sign up
+                                            <a class=" signjs_btn" asp-controller="Account" asp-action="register">
+                                                <span>İs axtaran</span> Qeydiyyat
                                                 <i class="far fa-user"></i>
                                             </a>
-                                            <a class=" signrs_btn" href="emp-registration.html">
-                                                <span>EMPLOYERS</span> Sign up
+                                            <a class=" signrs_btn" asp-controller="Account" asp-action="register">
+                                                <span>Əməkdaşlar</span> Qeydiyyat
                                                 <i class="fas fa-landmark"></i>
                                             </a>
                                         </span>
                                         <div>
-                                            <span class="member_btn">Already a member?</span>
-                                            <a class="lgin_btn btn btn-primary" href="login.html">
-                                                Login
+                                            <span class="member_btn">Onsuz da üzvsən?</span>
+                                            <a class="lgin_btn btn btn-primary" asp-controller="Account" asp-action="login">
+                                                Daxil ol
                                             </a>
                                         </div>
                                     </div>

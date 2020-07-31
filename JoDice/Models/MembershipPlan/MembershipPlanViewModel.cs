@@ -15,8 +15,8 @@ namespace JoDice.Models.MembershipPlan
 
         public string ActionName { get; set; }
         public string EndPoint { get; set; }
-        public IList<PlanSpecViewModel> Plans { get; set; }
-        public IList<DiscountViewModel> Discounts { get; set; }
+        public PlanSpecViewModel Plans { get; set; }
+        public DiscountViewModel Discount { get; set; }
 
     }
 }

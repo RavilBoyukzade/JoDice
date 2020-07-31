@@ -140,8 +140,6 @@ C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeA
 C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\JoDice.csproj.CoreCompileInputs.cache
-C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\JoDice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Partner\Default.cshtml.g.cs
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
@@ -150,4 +148,11 @@ C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\MembershipPlan\Index.cshtml.g.cs
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Membership\Default.cshtml.g.cs
 C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\CryptoHelper.dll
-C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Partial\_RearMenu.cshtml.g.cs
+C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\Korzh.EasyQuery.dll
+C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\Korzh.EasyQuery.Db.dll
+C:\Users\Lenovo\Desktop\JoDice\JoDice\bin\Debug\netcoreapp3.1\Korzh.EasyQuery.Linq.dll
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\JoDice.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\JoDice.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

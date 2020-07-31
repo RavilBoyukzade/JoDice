@@ -862,7 +862,7 @@ form {
 .header_inner .header_btm {
 	min-height: 240px;
 	background-color: rgba(55,35,84,0.9);
-	background-image: url(../images/inner_bg.png);
+	background-image: url(../../assets/images/inner_bg.png);
 	background-position: center;
 	background-blend-mode: multiply;
 	background-size: 1800px;

@@ -10,5 +10,9 @@ namespace Repository.Models
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
+
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
+        public ICollection<Job> Jobs { get; set; }
     }
 }

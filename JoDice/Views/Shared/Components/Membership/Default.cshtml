@@ -24,9 +24,9 @@
             </div>
             <h5>Features of @item.PlanCategoryName Plan</h5>
             <ul>
-                @*@foreach (var specItem in item.Plans)
+                @*@foreach (var spec in Model.Pla)
                 {
-                <li><i class="fas fa-check"></i>@specItem.Value</li>
+                <li><i class="fas fa-check"></i>@spec.Value</li>
                 }*@
             </ul>
             <a class="btn btn-third" href="@item.EndPoint">@item.ActionName</a>
