@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using JoDice.Models;
 using JoDice.Models.Account;
+using JoDice.Models.Job;
 using JoDice.Models.MembershipPlan;
 using Repository.Models;
 
@@ -20,6 +21,11 @@ namespace JoDice.Mapping
             CreateMap<MembershipPlan, MembershipPlanViewModel>();
             CreateMap<PlanSpec, PlanSpecViewModel>();
             CreateMap<RegisterViewModel, User>();
+            CreateMap<CompanyViewModel, Company>();
+            CreateMap<Department, DepartmentViewModel>();
+            CreateMap<Category, CategoryViewModel>();
+            CreateMap<Job, JobViewModel>();
+            CreateMap<Country, CountryViewModel>();
         }
     }
 }

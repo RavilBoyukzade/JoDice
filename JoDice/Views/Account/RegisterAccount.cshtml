@@ -1,0 +1,88 @@
+﻿@model JoDice.Models.Account.AccountViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+@section Inner{
+    header_inner
+}
+@section Header{
+    <div class="header_btm">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+}
+
+<main>
+    <div class="only-form-pages">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="only-form-box">
+                        <div class="welcome-text text-center mb-5">
+                            <h5 class="mb-0">Hesab yarat!</h5>
+                            <span>Artıq bir hesabınız var mı? <a asp-controller="Account" asp-action="loginaccount">Daxil ol!</a></span>
+                        </div>
+                        <form method="post" asp-action="registeraccount">
+                            <div class="com_class_form">
+                                <div class="form-group user_type_cont">
+
+                                    <label class="user_type" asp-for="UserList"></label>
+                                    @foreach (var item in Html.GetEnumSelectList<UserList>())
+                                    {
+                                        <input type="radio" value="@item.Text" asp-for="Register.UserList">
+                                        <span><i class="far fa-user"></i>@item.Text</span>
+                                    }
+                                    <span asp-validation-for="Register.UserList"></span>
+
+                                    @*<input type="radio" checked="" name="usertype" id="usertype-1" value="job seeker" >
+                                            <span><i class="far fa-user"></i>İş axtaran</span>
+                                        </label>
+                                        <label class="user_type" for="usertype-2">
+                                            <input type="radio" name="usertype" id="usertype-2" value="employer">
+                                            <span><i class="fas fa-landmark"></i>Əməkdaşlar</span>*@
+
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="email" size="40" placeholder="Email address* " asp-for="Register.Email">
+                                    <span asp-validation-for="Register.Email"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" size="40" placeholder="User name " asp-for="Register.Name">
+                                    <span asp-validation-for="Register.Name"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" size="40" placeholder="User surname " asp-for="Register.Surname">
+                                    <span asp-validation-for="Register.Surname"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" placeholder=" Password * " asp-for="Register.Password">
+                                    <span asp-validation-for="Register.Password"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" placeholder="Re-enter Password * " asp-for="Register.PasswordConfirm">
+                                    <span asp-validation-for="Register.PasswordConfirm"></span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input class="btn btn-primary" type="submit" value="Register">
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Yadda saxla
+                                    </label>
+                                </div>
+
+                            </div>
+                        </form>
+                        @*<div class="social_login">
+                                <p class="or_span"><span>or</span></p>
+                                <button class="btn btn-facebook"><i class="fab fa-facebook-f"></i> Log In via Facebook</button>
+                                <button class="btn btn-google"><i class="fab fa-google-plus-g"></i> Register via Google+</button>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

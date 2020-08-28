@@ -1,4 +1,4 @@
-/*------------------------------------------------------------------
+po/*------------------------------------------------------------------
 [Master Stylesheet]
 
 Project:		JoDice
@@ -73,6 +73,7 @@ button:focus, button:hover,  select, a, select:focus  {
 	letter-spacing: 0.05em;
 	padding: 13px 20px;
 }
+
 .btn i {
 	vertical-align: middle;
 }

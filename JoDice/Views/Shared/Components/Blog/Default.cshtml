@@ -7,10 +7,14 @@
             <img alt="" src="assets/images/@item.Photo" class="img-responsive">
             <div class="post_content">
                 <h6>
-                    <a href="blog-single.html">@item.Title</a>
+                    <a asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id" >@item.Title</a>
                 </h6>
-                <p class="post-text">@item.Text</p>
-                <a class="btn btn-secondary btn-rounded" href="blog-single.html">Continue reading</a>
+                <div style="clear:both; line-height:1.2em; padding:15px; width:555px;">
+                    <p style="overflow:hidden;text-overflow:ellipsis; white-space:nowrap;">@item.Text</p>
+                </div>
+                
+                @*<a class="btn btn-secondary btn-rounded" href="blog-single.html">Continue reading</a>*@
+                <a asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id" class="btn btn-secondary btn-rounded">Davamını ooxumaq</a>
             </div>
         </div>
     </div>

@@ -1,19 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
+using Repository.Models;
 using Repository.Repositories.AuthRepository;
 using Repository.Repositories.BlogRepository;
+using Repository.Repositories.CategoryRepository;
+using Repository.Repositories.CompanyRepository;
 using Repository.Repositories.ContentRepository;
+using Repository.Repositories.JobRepository;
 
 namespace JoDice
 {
@@ -41,6 +41,11 @@ namespace JoDice
             services.AddTransient<IBlogRepository, BlogRepository>();
             services.AddTransient<ITagRepository, TagRepository>();
             services.AddTransient<IAuthRepository, AuthRepository>();
+            services.AddTransient<ICompanyRepository, CompanyRepository>();
+            services.AddTransient<IJobRepository, JobRepository>();
+            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,9 +63,10 @@ namespace JoDice
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
+           
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

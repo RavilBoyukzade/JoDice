@@ -30,9 +30,8 @@ namespace Repository.Repositories.ContentRepository
 
         public IEnumerable<MembershipPlan> GetPlans()
         {
-            return _context.MembershipPlans.Where(b => b.Status)
-                                           .Include("PlanSpecs")
-                                           .OrderBy(m => m.PlanPrice)
+            return _context.MembershipPlans.Include("PlanSpecs")
+                                           .Where(p=>p.Status)
                                            .ToList();
         }
     }

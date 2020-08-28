@@ -1,0 +1,69 @@
+﻿@model IEnumerable<JoDice.Models.Job.JobViewModel>
+
+
+@foreach (var item in Model)
+{
+
+    <div class="col-sm-6">
+        <div class="featured_box ">
+            <div class="fb_image">
+                <a href="compnay-profile-single.html">
+                    <img alt="brand logo" src="assets/images/c-logo-01.webp">
+                </a>
+            </div>
+            <div class='fb_content'>
+                <h4>
+                    <a href="job-single.html">@item.JobName</a>
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-landmark"></i>
+                            Magna Aliqua
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-map-marker-alt"></i>
+                            @item.Adress
+                        </a>
+                    </li>
+                    <li>
+                        @{
+                            System.DateTime DateNow = DateTime.Now;
+                            System.DateTime AddedDate = item.AddedDate;
+
+                            System.TimeSpan diff2 = AddedDate.Subtract(DateNow) * (-1);
+                        }
+
+                        @if (item.AddedDate == DateTime.Now.Date)
+                        {
+                            <a href="#">
+                                <i class="far fa-clock"></i>
+                                Bu gün
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="#">
+                                <i class="far fa-clock"></i>
+                                @diff2.Days gün əvvəl
+                            </a>
+                        }
+
+                    </li>
+                </ul>
+            </div>
+            <div class="fb_action">
+                <a title="add to favourite" href="#"><i class="far fa-heart"></i></a>
+                <a class="btn btn-third" href="job-single.html">Ətraflı</a>
+                <ul class="tags">
+                    <li>copywriting</li>
+                    <li>translating</li>
+                    <li>editing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+

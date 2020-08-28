@@ -13,7 +13,7 @@ namespace Repository.Models
         [MaxLength(200)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(1000)]
+        [MaxLength(5000)]
         public string Text { get; set; }
         public ICollection<Tag> Tags { get; set; }
     }

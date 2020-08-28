@@ -34,7 +34,7 @@ using Repository.Enums;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8ad6fc792c70101260190a4caddeb681fc9cd386", @"/Views/Shared/Components/Tag/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7b0c68681ba3a4972b1b796630cfc5db9f102ecb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"084c6bc61752c43d83003a8ce086d13bf88c1c2a", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_Tag_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<JoDice.Models.TagViewModel>>
     {
         #pragma warning disable 1998

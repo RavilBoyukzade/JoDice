@@ -97,8 +97,8 @@ namespace Repository.Migrations
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasColumnType("nvarchar(1000)")
-                        .HasMaxLength(1000);
+                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(5000);
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -149,6 +149,73 @@ namespace Repository.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Repository.Models.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CompanyLogo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("WorkFrom")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Companies");
+                });
+
+            modelBuilder.Entity("Repository.Models.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CountryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobId");
+
+                    b.ToTable("Countries");
+                });
+
             modelBuilder.Entity("Repository.Models.Department", b =>
                 {
                     b.Property<int>("Id")
@@ -163,6 +230,13 @@ namespace Repository.Migrations
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("IconImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPopular")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -171,14 +245,16 @@ namespace Repository.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Department");
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("Repository.Models.Discount", b =>
@@ -233,19 +309,34 @@ namespace Repository.Migrations
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsPpopular")
-                        .HasColumnType("bit");
+                    b.Property<string>("JobAbout")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.Property<string>("JobName")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("JobType")
+                        .HasColumnType("int");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
@@ -253,6 +344,10 @@ namespace Repository.Migrations
 
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Salary")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
@@ -377,7 +472,9 @@ namespace Repository.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -461,13 +558,13 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("Sername")
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Token")
                         .IsRequired()
@@ -487,6 +584,15 @@ namespace Repository.Migrations
                     b.HasOne("Repository.Models.Department", "Department")
                         .WithMany("Categories")
                         .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Repository.Models.Country", b =>
+                {
+                    b.HasOne("Repository.Models.Job", "Job")
+                        .WithMany("Countries")
+                        .HasForeignKey("JobId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

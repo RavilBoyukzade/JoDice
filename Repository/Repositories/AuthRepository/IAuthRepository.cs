@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Repository.Repositories.AuthRepository
 {
-    public interface IAuthRepository 
+    public interface IAuthRepository
     {
         User Register(User user);
         User Login(string email, string password);
@@ -38,9 +38,10 @@ namespace Repository.Repositories.AuthRepository
 
         public User Login(string email, string password)
         {
-            User user = _context.Users.FirstOrDefault(u => u.Email == email);
+            User user = _context.Users.Where(u=>u.Email==email && u.Password == password)
+                                      .FirstOrDefault();
 
-            if (user!=null & CryptoHelper.Crypto.VerifyHashedPassword(user.Password,password))
+            if (user != null & CryptoHelper.Crypto.VerifyHashedPassword(user.Password, password))
             {
                 return user;
             }
@@ -49,6 +50,7 @@ namespace Repository.Repositories.AuthRepository
 
         public User Register(User user)
         {
+
             user.Password = CryptoHelper.Crypto.HashPassword(user.Password);
             user.AddedDate = DateTime.Now;
             user.ModifiedDate = DateTime.Now;

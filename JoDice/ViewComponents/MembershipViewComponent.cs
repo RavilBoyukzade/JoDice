@@ -22,11 +22,13 @@ namespace JoDice.ViewComponents
             _contentRepository = contentRepository;
         }
 
+        
         public IViewComponentResult Invoke()
         {
             var plan = _contentRepository.GetPlans();
 
             var model = _mapper.Map<IEnumerable<MembershipPlan>, IEnumerable<MembershipPlanViewModel>>(plan);
+
             return View(model);
         }
     }

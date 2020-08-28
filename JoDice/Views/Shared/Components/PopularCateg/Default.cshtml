@@ -1,0 +1,21 @@
+﻿@model IEnumerable<JoDice.Models.DepartmentViewModel>
+
+@foreach (var item in Model)
+{
+<div class="col-lg-3 col-md-6">
+    <div class="category_box">
+        <div class="cb_header">
+            <img alt="" src="~/assets/images/@item.IconImage">
+            <span class="job_count">@item.Categories.Count</span>
+        </div>
+        <div class="cb_bottom">
+            <h3>@item.Name</h3> 
+                    
+            <p>@item.Categories.ElementAt(0).Name /&nbsp; @item.Categories.ElementAt(1).Name &amp; More</p>
+	                   
+        </div>
+    </div>
+</div>
+}
+
+

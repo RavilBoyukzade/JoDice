@@ -1,4 +1,5 @@
-﻿using Repository.Models;
+﻿using Repository.Enums;
+using Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,10 @@ using System.Threading.Tasks;
 namespace JoDice.Models.Account
 {
     public class RegisterViewModel
-    {   /*User registration Name*/
+    {
+        public UserList UserList { get; set; }
+
+        /*User registration Name*/
         [Required(ErrorMessage ="Ad vacibdir")]
         [MaxLength(50,ErrorMessage ="Ad maximum 50 xarakter ola bilər")]
         public string Name { get; set; }

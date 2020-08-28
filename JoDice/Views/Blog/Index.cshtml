@@ -1,4 +1,5 @@
-﻿@{
+﻿@model JoDice.Models.BlogViewModel
+@{
     ViewData["Title"] = "Blog";
 }
 @section Inner{
@@ -69,13 +70,14 @@
                             <div class="sjs_box">
                                 <h3>Axtarış</h3>
                                 
-                               <form class="form-inline" action="http://veepixel.com/action_page.php">
-                                        <input type="text" class="form-control" placeholder="Search" id="search-blog">
-                                        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                @*<form class="form-inline" action="http://veepixel.com/action_page.php">*@
+                                    <form class="form-inline" method="post">
+                                        <input asp-for="@Model.Txt" type="text" class="form-control" placeholder="Search" id="TextSearchInput">
+                                        <button type="submit" class="btn btn-primary" id="ApplyTextSearchButton"><i class="fas fa-search"></i></button>
 
                                     </form>
 
-                            </div>
+</div>
                             @*Blog tags*@
                             <div class="sjs_box">
                                 <h3>Etiketlər</h3>

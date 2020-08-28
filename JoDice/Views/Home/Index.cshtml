@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<JoDice.Models.HomeViewModel>
 @{
     ViewData["Title"] = "Home";
 }
@@ -23,17 +23,7 @@
                             <div class="banner_form_cont">
                                 <form action="http://veepixel.com/tf/html/jodice/browse-jobs.html">
                                     <div class="banerSearch" data-aos="fade-up" data-aos-delay="200">
-                                        <div class="fild-wrap fw-job-title">
-                                            <i class="fas fa-briefcase"></i>
-                                            <select class="js-example-basic-multiple" name="state">
-                                                <option value="AL"> JOB TITLE, SKILL, INDUSTRY</option>
-                                                <option value="1">Concierge</option>
-                                                <option value="2">Event Planner</option>
-                                                <option value="3">Executive Chef</option>
-                                                <option value="4">General Manager</option>
-
-                                            </select>
-                                        </div>
+                                        <vc:department></vc:department>
                                         <div class="fild-wrap fw-job-location">
                                             <i class="fas fa-map-marker-alt"></i>
                                             <select class="js-example-basic-single" name="state">
@@ -106,7 +96,9 @@
         <div class="container">
             <h2 data-aos="fade-up" data-aos-delay="400" class="section_h">Popular Job Categories</h2>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+
+                <vc:popular-categ></vc:popular-categ>
+                @*<div class="col-lg-3 col-md-6">
                     <div class="category_box">
                         <div class="cb_header">
                             <img alt="" src="assets/images/i-code.png">
@@ -201,7 +193,7 @@
                             <p>Advisor, Coach, Education Coordinator & More</p>
                         </div>
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
     </div>
@@ -216,7 +208,8 @@
         <div class="container">
             <h2 data-aos="fade-up" data-aos-delay="400" class="section_h">Featured Jobs</h2>
             <div class="row two_col featured_box_outer">
-                <div class="col-sm-6">
+                <vc:job></vc:job>
+                @*<div class="col-sm-6">
                     <div class="featured_box ">
                         <div class="fb_image">
                             <a href="compnay-profile-single.html">
@@ -474,7 +467,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>*@
                 <div class="col-md-12 text-right">
                     <a data-aos="fade-down" data-aos-delay="400" class="btn btn-primary" href="browse-jobs.html">Browse All Jobs <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>

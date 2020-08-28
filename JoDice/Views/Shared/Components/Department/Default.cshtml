@@ -1,0 +1,18 @@
+﻿@model IEnumerable<JoDice.Models.DepartmentViewModel>
+
+<div class="fild-wrap fw-job-title">
+    <i class="fas fa-briefcase"></i>
+    <select class="js-example-basic-multiple" name="state">
+        <option value="AL"> JOB TITLE, SKILL, INDUSTRY</option>
+        @foreach (var item in Model)
+        {
+            <option value="1">@item.Name</option>
+        }
+        @*<option value="1">Concierge</option>
+        <option value="2">Event Planner</option>
+        <option value="3">Executive Chef</option>
+        <option value="4">General Manager</option>*@
+
+    </select>
+</div>
+

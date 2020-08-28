@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace JoDice.Models.Account
 {
     public class LoginViewModel
     {
+       
         [Required(ErrorMessage ="E-poçt vacibdir")]
         [MaxLength(50,ErrorMessage ="E-poçt maximum 50 simvoldan ibarət ola bilər")]
         [EmailAddress(ErrorMessage ="Düzgün e-poçt daxil edin")]

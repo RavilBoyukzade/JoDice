@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	$('.sidebar').find('[href="' + window.location.pathname + '"]').parent().addClass('is-active');
+
 	$("#customSwitch1").on('change', function(){
 		$(".plan_price").toggleClass("hide");
 	});

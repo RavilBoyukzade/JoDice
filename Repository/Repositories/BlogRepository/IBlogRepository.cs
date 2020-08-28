@@ -10,6 +10,7 @@ namespace Repository.Repositories.BlogRepository
     public interface IBlogRepository
     {
         IEnumerable<Blog> GetBlogs();
+        Blog GetBlogById(int id);
     }
 
     public class BlogRepository : IBlogRepository
@@ -20,6 +21,12 @@ namespace Repository.Repositories.BlogRepository
         {
             _context = context;
         }
+
+        public Blog GetBlogById(int id)
+        {
+            return _context.Blogs.Find(id);
+        }
+
         public IEnumerable<Blog> GetBlogs()
         {
             return _context.Blogs.Where(s => s.Status)
