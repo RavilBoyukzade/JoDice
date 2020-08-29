@@ -20,7 +20,11 @@
                 <h4><strong>@item.PlanPrice ₼</strong>/ monthly</h4>
             </div>
             <div class="plan_price pl-yearly hide">
-                <h4><strong>@item.PlanPrice</strong>/ yearly</h4>
+                @{ 
+                    var monthly = Convert.ToInt32( item.PlanPrice);
+                    var yearly = monthly * 12 * 79 / 100;
+                }
+                <h4><strong>@yearly ₼</strong>/ yearly</h4>
             </div>
             <h5>Features of @item.PlanCategoryName Plan</h5>
             <ul>

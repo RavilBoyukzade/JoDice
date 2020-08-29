@@ -186,3 +186,5 @@ C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\JoDice.genruntimec
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Department\Default.cshtml.g.cs
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PopularCateg\Default.cshtml.g.cs
 C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Job\Default.cshtml.g.cs
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\HomeBlog\Default.cshtml.g.cs
+C:\Users\Lenovo\Desktop\JoDice\JoDice\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\BrowsJob\Default.cshtml.g.cs

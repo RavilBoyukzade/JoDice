@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <div class="featured_box ">
             <div class="fb_image">
-                <a href="compnay-profile-single.html">
+                <a asp-controller="JobSeekerPanel" asp-action="JobSingle" asp-route-id="@item.Id">
                     <img alt="brand logo" src="assets/images/c-logo-01.webp">
                 </a>
             </div>
@@ -17,10 +17,14 @@
                 </h4>
                 <ul>
                     <li>
+                        @foreach (var country in item.Countries)
+	{
                         <a href="#">
                             <i class="fas fa-landmark"></i>
-                            Magna Aliqua
+                            @country.CountryName
                         </a>
+	}
+                        
                     </li>
                     <li>
                         <a href="#">
@@ -56,7 +60,7 @@
             </div>
             <div class="fb_action">
                 <a title="add to favourite" href="#"><i class="far fa-heart"></i></a>
-                <a class="btn btn-third" href="job-single.html">Ətraflı</a>
+                <a class="btn btn-third" asp-controller="JobSeekerPanel" asp-action="JobSingle" asp-route-id="@item.Id">Ətraflı</a>
                 <ul class="tags">
                     <li>copywriting</li>
                     <li>translating</li>

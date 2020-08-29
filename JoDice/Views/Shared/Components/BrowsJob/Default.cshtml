@@ -1,0 +1,61 @@
+﻿@model IEnumerable<JoDice.Models.Job.JobViewModel>
+
+@foreach (var item in Model)
+{
+<div class="col-sm-6">
+    <div class="featured_box ">
+        <div class="fb_image">
+            <img alt="brand logo" src="assets/images/demo-restro.jpg">
+        </div>
+        <div class="fb_content">
+            <h4>@item.JobName</h4>
+            <ul>
+                <li>
+                    @foreach (var country in item.Countries)
+                    {
+                        <a href="#">
+                            <i class="fas fa-landmark"></i>
+                            @country.CountryName
+                        </a>
+                    }
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i>
+                        @item.Adress
+                    </a>
+                </li>
+                
+                <li>
+                    @{
+                        System.DateTime DateNow = DateTime.Now;
+                        System.DateTime AddedDate = item.AddedDate;
+
+                        System.TimeSpan diff2 = AddedDate.Subtract(DateNow) * (-1);
+                    }
+
+                    @if (item.AddedDate == DateTime.Now.Date)
+                    {
+                        <a href="#">
+                            <i class="far fa-clock"></i>
+                            Bu gün
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="#">
+                            <i class="far fa-clock"></i>
+                            @diff2.Days gün əvvəl
+                        </a>
+                    }
+                </li>
+            </ul>
+        </div>
+        <div class="fb_action">
+            <a title="add to favourite" href="#"><i class="far fa-heart"></i></a>
+            <a class="btn btn-primary" href="#">Etrafli</a>
+        </div>
+    </div>
+</div>
+}
+

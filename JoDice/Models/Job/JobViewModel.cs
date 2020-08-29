@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
+using Repository.Models;
+
 
 namespace JoDice.Models.Job
+
 {
     public class JobViewModel
     {
@@ -18,5 +21,6 @@ namespace JoDice.Models.Job
         public string JobAbout { get; set; }
         public string JobTitle { get; set; }
         public List<CountryViewModel> Countries { get; set; }
+        public IQueryable<Repository.Models.Job> Jobs { get; set; }
     }
 }

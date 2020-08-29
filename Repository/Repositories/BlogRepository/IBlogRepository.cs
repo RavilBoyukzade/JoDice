@@ -9,6 +9,7 @@ namespace Repository.Repositories.BlogRepository
 {
     public interface IBlogRepository
     {
+        IEnumerable<Blog> GetNewPostedBlog(int limit);
         IEnumerable<Blog> GetBlogs();
         Blog GetBlogById(int id);
     }
@@ -31,6 +32,14 @@ namespace Repository.Repositories.BlogRepository
         {
             return _context.Blogs.Where(s => s.Status)
                                  .OrderByDescending(d => d.AddedDate)
+                                 .ToList();
+        }
+
+        public IEnumerable<Blog> GetNewPostedBlog(int limit)
+        {
+            return _context.Blogs.Where(s => s.Status)
+                                 .OrderByDescending(d => d.AddedDate)
+                                 .Take(limit)
                                  .ToList();
         }
     }
